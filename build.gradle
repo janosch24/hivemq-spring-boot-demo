@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'com.example.hivemq'
-version = '2024.7'
+version = '1.0.0-SNAPSHOT'
 
 java {
 	toolchain {
@@ -27,7 +27,7 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 //	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation "com.example.hivemq.boot:hivemq-springboot-starter:${project.version}"
+	implementation "com.example.hivemq.boot:hivemq-spring-boot-starter:1.0.0-SNAPSHOT"
 	implementation "jakarta.xml.bind:jakarta.xml.bind-api:2.3.3"
 	implementation "com.sun.xml.bind:jaxb-impl:2.3.9"
 
