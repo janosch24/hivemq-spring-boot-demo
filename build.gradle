@@ -1,6 +1,6 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.3.4'
+	id 'org.springframework.boot' version '3.4.0'
 	id 'io.spring.dependency-management' version '1.1.6'
 }
 
@@ -25,12 +25,20 @@ repositories {
 }
 
 dependencies {
-	implementation ("com.example.hivemq.boot:hivemq-springboot-starter:${project.version}")
+	implementation 'org.springframework.boot:spring-boot-starter'
+//	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation "com.example.hivemq.boot:hivemq-springboot-starter:${project.version}"
+	implementation "jakarta.xml.bind:jakarta.xml.bind-api:2.3.3"
+	implementation "com.sun.xml.bind:jaxb-impl:2.3.9"
 
 	annotationProcessor 'org.projectlombok:lombok'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('bootJar') {
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
 tasks.named('test') {
