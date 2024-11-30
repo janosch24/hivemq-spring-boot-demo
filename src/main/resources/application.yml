@@ -7,11 +7,11 @@ logging:
   name: application
   path: log
   file:
-    name: application.log
+    name: log/application.log
 
 hivemq:
   enabled: true
-  auto-start: true
+  auto-start: false
   config.folder: .hivemq/conf
   data.folder: .hivemq/data
   extensions.folder: .hivemq/extensions
