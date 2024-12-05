@@ -2,6 +2,7 @@ plugins {
 	id 'java'
 	alias libs.plugins.org.springframework.boot
 	alias libs.plugins.io.spring.dependency.management
+	alias libs.plugins.licence
 }
 
 group = 'com.example.hivemq'
@@ -43,4 +44,13 @@ tasks.named("bootJar") {
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+license {
+	header = file("HEADER")
+	mapping("java", "SLASHSTAR_STYLE")
+}
+
+downloadLicenses {
+	dependencyConfiguration = "runtimeClasspath"
 }
