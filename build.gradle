@@ -1,56 +1,56 @@
 plugins {
-	id 'java'
-	alias libs.plugins.org.springframework.boot
-	alias libs.plugins.io.spring.dependency.management
-	alias libs.plugins.licence
+    id 'java'
+    alias libs.plugins.org.springframework.boot
+    alias libs.plugins.io.spring.dependency.management
+    alias libs.plugins.licence
 }
 
 group = 'com.example.hivemq'
 version = '1.0.0-SNAPSHOT'
 
 java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(21)
-	}
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
 }
 
 configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
-	}
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
 }
 
 repositories {
-	mavenCentral()
-	mavenLocal()
+    mavenCentral()
+    mavenLocal()
 }
 
 dependencies {
-	implementation libs.org.springframework.boot.starter
-	implementation libs.org.springframework.boot.starter.validation
-	implementation libs.hivemq.spring.boot.starter
+    implementation libs.org.springframework.boot.starter
+    implementation libs.org.springframework.boot.starter.validation
+    implementation libs.hivemq.spring.boot.starter
 
-	annotationProcessor libs.lombok
+    annotationProcessor libs.lombok
 
-	testImplementation libs.org.springframework.boot.starter.test
-	testRuntimeOnly libs.junit.platform.launcher
+    testImplementation libs.org.springframework.boot.starter.test
+    testRuntimeOnly libs.junit.platform.launcher
 }
 
 tasks.named("bootJar") {
-	manifest {
-		attributes 'HiveMQ-Version': libs.versions.hivemq.starter.version.get()
-	}
+    manifest {
+        attributes 'HiveMQ-Version': libs.versions.hivemq.starter.version.get()
+    }
 }
 
 tasks.named('test') {
-	useJUnitPlatform()
+    useJUnitPlatform()
 }
 
 license {
-	header = file("HEADER")
-	mapping("java", "SLASHSTAR_STYLE")
+    header = file("HEADER")
+    mapping("java", "SLASHSTAR_STYLE")
 }
 
 downloadLicenses {
-	dependencyConfiguration = "runtimeClasspath"
+    dependencyConfiguration = "runtimeClasspath"
 }
