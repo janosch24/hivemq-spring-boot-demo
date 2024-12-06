@@ -26,6 +26,7 @@ logging:
     name: log/application.log
 
 # Configuration for hivemq-spring-boot-starter
+# Can get commented out at all to have absolute default behaviour
 hivemq:
   enabled: true
   auto-start: false
