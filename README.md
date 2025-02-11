@@ -1,11 +1,11 @@
 # hivemq-spring-boot-demo
-A _Spring Boot_ demo application showing the usage of [hivemq-spring-boot-starter](https://github.com/janosch24/hivemq-spring-boot-starter).
+A _Spring Boot 3_ demo application showing the usage of [hivemq-spring-boot-starter](https://github.com/janosch24/hivemq-spring-boot-starter).
 
 ### Usage
 In order to use this demo, you first need to build the _hivemq-spring-boot-starter_.  
 Follow the section on **building** the starter at [hivemq-spring-boot-starter](https://github.com/janosch24/hivemq-spring-boot-starter).
 
-If you're done you can clone this repository and start the demo:
+If you're done, you can clone this repository and start the demo:
 
 ~~~cmd
 git clone https://github.com/janosch24/hivemq-spring-boot-demo
