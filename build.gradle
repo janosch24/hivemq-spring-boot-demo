@@ -1,7 +1,8 @@
+import org.springframework.boot.gradle.plugin.SpringBootPlugin
+
 plugins {
     id 'java'
     alias libs.plugins.org.springframework.boot
-    alias libs.plugins.io.spring.dependency.management
     alias libs.plugins.licence
 }
 
@@ -26,10 +27,12 @@ repositories {
 }
 
 dependencies {
+    implementation platform(SpringBootPlugin.BOM_COORDINATES)
     implementation libs.org.springframework.boot.starter
     implementation libs.org.springframework.boot.starter.validation
     implementation libs.hivemq.spring.boot.starter
 
+    annotationProcessor platform(SpringBootPlugin.BOM_COORDINATES)
     annotationProcessor libs.lombok
 
     testImplementation libs.org.springframework.boot.starter.test

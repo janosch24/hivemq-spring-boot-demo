@@ -4,18 +4,16 @@
 
 [versions]
 # Build plugins
-spring-boot-version = "3.4.4"
-spring-dependency-management-version = "1.1.7"
+spring-boot-version = "3.5.0"
 licence-version = "0.16.1"
 
 # Libraries
-hivemq-starter-version = "2025.2"
+hivemq-starter-version = "2025.3"
 
 
 [plugins]
 # Build-plugins
 org-springframework-boot = { id = "org.springframework.boot", version.ref = "spring-boot-version" }
-io-spring-dependency-management = { id = "io.spring.dependency-management", version.ref = "spring-dependency-management-version" }
 licence = { id = "com.github.hierynomus.license", version.ref = "licence-version" }
 
 
